@@ -1,11 +1,12 @@
 from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers.string import StrOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from third_parties.linkedin import scrape_linkedin_profile
+import os 
 if __name__ == '__main__':
     load_dotenv()
     print("Hello LangChain")
+    GOOGLE_API_KEY = os.environ("GOOGLE_API_KEY")
     
     summary_template = """
             given the Linkedin {information} about a person from I want you to create:
@@ -18,7 +19,7 @@ summary_prompt_template = PromptTemplate(
                                           template=summary_template
                                         )
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key=GOOGLE_API_KEY)
 
 # tempeture is the creativity of the LLM
 

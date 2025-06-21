@@ -4,6 +4,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
+print("API KEY:", os.getenv("SCRAPIN_API_KEY"))
 def is_structurally_empty(val):
     if val in (None, "", [], 0):
         return True
@@ -24,7 +25,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
     else:
         api_endpoint = "https://api.scrapin.io/enrichment/profile"
         params = {
-            "apikey":os.environ["SCRAPIN_API_KEY"], # We have to use the name of the params in this way for th API function 
+            "apikey":os.getenv("SCRAPIN_API_KEY"), # We have to use the name of the params in this way for th API function 
             "linkedInUrl": linkedin_profile_url,
         }
         response = requests.get(
@@ -49,5 +50,5 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
 if __name__ == "__main__":
     print(scrape_linkedin_profile(
         linkedin_profile_url="https://www.linkedin.com/in/pedronaguilar/",
-        )
+        mock=False)
     )

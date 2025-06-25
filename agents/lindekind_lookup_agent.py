@@ -1,15 +1,16 @@
 import os
 from dotenv import load_dotenv
-
-load_dotenv()
-
-
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.tools import Tool
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain import hub
 from tools.tools import get_profile_url_tavily
+
+load_dotenv()
+
 # Dependng how complex  agent it is how many tools, how task it has to solve maybe we need a stonger LLM
 def lookup(name:str) -> str:
     llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")

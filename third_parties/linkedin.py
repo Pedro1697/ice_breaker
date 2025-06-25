@@ -4,7 +4,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-print("API KEY:", os.getenv("SCRAPIN_API_KEY"))
+
 def is_structurally_empty(val):
     if val in (None, "", [], 0):
         return True

@@ -8,7 +8,7 @@ The purpose of this project is to start in the generative AI with an ice breaker
 ## Environment Variables
 > SCRAPIN_API_KEY \
 > GOOGLE_API_KEY \
-> TAVILY_API_KEY \
+> TAVILY_API_KEY 
 
 To run this project, you will need to add the following environment variables to your .evn file
 
@@ -50,6 +50,6 @@ pipenv run app.py
 
 
 ## License 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the Apache License. See the LICENSE file for details.
 ## Credits 
 https://github.com/emarco177

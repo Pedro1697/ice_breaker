@@ -1,8 +1,8 @@
 # Ice Breaker
 
 ## Environment Variables
-> SCRAPIN_API_KEY
-> GOOGLE_API_KEY
+> SCRAPIN_API_KEY \
+> GOOGLE_API_KEY \
 > TAVILY_API_KEY
 
 ## License 
